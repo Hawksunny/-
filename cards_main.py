@@ -1,7 +1,10 @@
+import cards_tools
+
 # 无限循环, 由用户决定何时退出循环
 while True:
 
     # 显示功能菜单
+    cards_tools.show_menu()
 
     action_str = input("请选择希望执行的操作: ")
     print("您选择的操作是【%s】" % action_str)
