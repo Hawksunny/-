@@ -77,3 +77,28 @@ def search_card():
     """搜索名片"""
     print("-" * 50)
     print("* 搜索名片")
+
+    # 1. 提示用户输入要搜索的姓名
+    find_name = input("请输入要搜索的姓名： ")
+
+    # 2. 遍历名片列表， 查询要搜索的姓名，如果没有找到， 需要提示用户
+    for card_dict in card_list:
+
+        if card_dict["name"] == find_name:
+
+            print("姓名\t\t\t电话\t\t\tQQ\t\t\t邮箱")
+
+            print("=" * 50)
+
+            print("%s\t\t\t%s\t\t\t%s\t\t\t%s" % (card_dict["name"],
+                                                  card_dict["phone"],
+                                                  card_dict["qq"],
+                                                  card_dict["email"]))
+
+            # TODO 针对找到的名片记录执行修改和删除的操作
+
+            break
+
+    else:
+
+        print("抱歉, 没有找到 %s" % find_name)
