@@ -3,7 +3,6 @@ card_list = []
 
 
 def show_menu():
-
     """显示菜单"""
     print("\\" * 50)
     print("欢迎使用【名片管理系统】version-1.0")
@@ -17,7 +16,6 @@ def show_menu():
 
 
 def new_card():
-
     """新增名片"""
     print("-" * 50)
     print("* 新增名片")
@@ -44,14 +42,38 @@ def new_card():
 
 
 def show_all():
-
     """显示所有名片"""
     print("-" * 50)
     print("* 显示所有名片")
 
+    # 判断是否存在名片记录, 如果没有, 提示用户并且返回
+    if len(card_list) == 0:
+        print("当前没有任何名片记录, 请使用功能1新增名片吧!")
+
+        # return 可以返回一个函数的执行结果
+        # 下方的代码不会被执行
+        # 如果 return 后面没有任何的内容, 表示会返回到调用函数的位置
+        # 并且不返回任何的结果
+        return
+
+    # 打印表头
+    for name in ["姓名", "电话", "QQ", "邮箱"]:
+        print(name, end="\t\t\t")
+
+    print("")
+
+    # 打印分割线
+    print("=" * 50)
+
+    # 遍历名片列表依次输出字典信息
+    for card_dict in card_list:
+        print("%s\t\t\t%s\t\t\t%s\t\t\t%s" % (card_dict["name"],
+                                              card_dict["phone"],
+                                              card_dict["qq"],
+                                              card_dict["email"]))
+
 
 def search_card():
-
     """搜索名片"""
     print("-" * 50)
     print("* 搜索名片")
