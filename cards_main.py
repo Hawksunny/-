@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 import cards_tools
 
 # 无限循环, 由用户决定何时退出循环
